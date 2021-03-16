@@ -1,0 +1,185 @@
+{
+  "description" : "parse gcp audit logs into Filebeat ECS format",
+  "processors" : [
+      {
+        "rename" : {
+          "field" : "protoPayload.@type",
+          "target_field" : "gcp.audit.type",
+          "ignore_missing" : true
+        }
+      },
+      {
+        "rename" : {
+          "field" : "protoPayload.authenticationInfo.principalEmail",
+          "target_field" : "gcp.audit.authentication_info.principal_email",
+          "ignore_missing" : true
+        }
+      },
+      {
+        "rename" : {
+          "field" : "protoPayload.authenticationInfo.principalSubject",
+          "target_field" : "gcp.audit.authentication_info.authority_selector",
+          "ignore_missing" : true
+        }
+      },
+      {
+        "rename" : {
+          "field" : "protoPayload.serviceName",
+          "target_field" : "gcp.audit.service_name",
+          "ignore_missing" : true
+        }
+      },
+      {
+        "rename" : {
+          "field" : "protoPayload.methodName",
+          "target_field" : "gcp.audit.method_name",
+          "ignore_missing" : true
+        }
+      },
+      {
+        "set" : {
+          "field" : "event.action",
+          "value" : "{{gcp.audit.method_name}}"
+        }
+      },
+      {
+        "rename" : {
+          "field" : "protoPayload.authorizationInfo",
+          "target_field" : "gcp.audit.authorization_info",
+          "ignore_missing" : true
+        }
+      },
+      {
+        "rename" : {
+          "field" : "protoPayload.requestMetadata.callerIp",
+          "target_field" : "gcp.audit.request_metadata.caller_ip",
+          "ignore_missing" : true
+        }
+      },
+      {
+        "rename" : {
+          "field" : "protoPayload.requestMetadata.callerSuppliedUserAgent",
+          "target_field" : "gcp.audit.request_metadata.caller_supplied_user_agent",
+          "ignore_missing" : true
+        }
+      },
+      {
+        "rename" : {
+          "field" : "protoPayload.resourceName",
+          "target_field" : "gcp.audit.resource_name",
+          "ignore_missing" : true
+        }
+      },
+      {
+        "rename" : {
+          "field" : "protoPayload.response",
+          "target_field" : "gcp.audit.response",
+          "ignore_missing" : true
+        }
+      },
+      {
+        "rename" : {
+          "field" : "protoPayload.status",
+          "target_field" : "gcp.audit.status",
+          "ignore_missing" : true
+        }
+      },
+      {
+        "rename" : {
+          "field" : "protoPayload.request.name",
+          "target_field" : "gcp.audit.request.resource_name",
+          "ignore_missing" : true
+        }
+      },
+      {
+        "rename" : {
+          "field" : "protoPayload.request.@type",
+          "target_field" : "gcp.audit.request.name",
+          "ignore_missing" : true
+        }
+      },
+      {
+        "rename" : {
+          "field" : "protoPayload.numResponseItems",
+          "target_field" : "gcp.audit.num_response_items",
+          "ignore_missing" : true
+        }
+      },
+      {
+        "rename" : {
+          "field" : "logName",
+          "target_field" : "log.logger",
+          "ignore_missing" : true
+        }
+      },
+      {
+        "set" : {
+          "field" : "event.dataset",
+          "value" : "gcp.audit"
+        }
+      },
+      {
+        "set" : {
+          "field" : "event.outcome",
+          "value" : "success"
+        }
+      },
+      {
+        "date" : {
+          "field" : "timestamp",
+          "target_field" : "event.ingested",
+          "formats" : ["ISO8601"]
+        }
+      },
+      {
+        "date" : {
+          "field" : "timestamp",
+          "target_field" : "@timestamp",
+          "formats" : ["ISO8601"]
+        }
+      },
+      {
+        "set" : {
+          "field" : "user.email",
+          "value" : "{{gcp.audit.authentication_info.principal_email}}"
+        }
+      },
+      {
+        "set" : {
+          "field" : "user_agent.name",
+          "value" : "{{gcp.audit.request_metadata.caller_supplied_user_agent}}"
+        }
+      },
+      {
+        "set" : {
+          "field" : "service.name",
+          "value" : "{{gcp.audit.service_name}}"
+        }
+      },
+      {
+        "geoip" : {
+          "field" : "gcp.audit.request_metadata.caller_ip",
+          "target_field" : "source.geo"
+        }
+      },
+      {
+        "set": {
+          "field" : "source.ip",
+          "value": "{{gcp.audit.request_metadata.caller_ip}}"
+        }
+      },
+      {
+        "remove": {
+          "field": ["protoPayload"]
+        }
+      }      
+    ],
+  "on_failure" : [
+    {
+      "set" : {
+        "value" : "{{ _ingest.on_failure_message }}",
+        "field" : "error.message"
+      }
+    }      
+  ]
+}

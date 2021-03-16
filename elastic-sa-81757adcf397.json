@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "elastic-sa",
+  "private_key_id": "81757adcf397f3f1078dedda29d5567ec29a3513",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDZBTwG3SaCZ4e3\nzsIZzQ79VJEDesMuOBOroflyTtAdm6KVCYmDh4+gImm0Rtfr+cBIBV3hwOlzhVU6\nSbChRVwI/PxT9z2ZUHEyZW2eWmcqcpmwM5FME/QAGJe1DDwVfJ1XBzXTaEG8agIG\nLG4AUFEf8muJqfJ1+GNuOV6EOpOadZzw4qg3jQc6aovtP27B0c8wXxvMC/z007Rl\nz7zqfIVKG+JTg+r667X12qA3naioDsX/tF8ZHxFJpVkgcFNXg2TsHHQZGfQnVnUY\nCisOKz9LxcJhZ2pdMykszxN9t8ws2XO5gigDE7Xzx01p9d+bkWaDyh9/KUC6q467\nGe8hFM1PAgMBAAECggEAUfzHQ7SS0ts4C7nh3It6qTwkmNLtH+3xiHrl2UhrGXRt\nxK5YtEcnfJDjrEbDVhQBj3PvltUhnRH3M9EZGKQyc/bXgQU70UrxqN9mvVdb+E5Z\nP5cLwlkbalngHnbj0B5G9tTzgc22X+8QmrJ4UEgHjfEwrU52GhlfvwmPapcSolww\neMksBAlS7ormIy9ejCg84Mev+HgzfkDU4jP35I3rVdb6FrcVDMG4MJcutJoI7LGY\n9ariUAeBbfZQRYWOcg/DEaqfxEKtEZeirgrtTEu5OS4T+/1yeL/YUlniDjqP5Qh5\nRAtWSD3fRjzjynTdZgba/jUeb4EjlrZvlpCZH+zI2QKBgQDsBktNTA75N2jthlH2\nCpk+wCw6upsboBApjlmIwFKzz+SOU9Tfj/whOpCV1SyUmh1aKobLW7/eC67c1Ols\nc5Z6uZl2XjfHpRbsz7uO8RcrBJv0R+WfWXAZ5qw/ViwAjv0smFipjh9Kq43U0eyo\n7WTUZxUSoJh0GGzx+Z6EveeOVQKBgQDrYzJmj2oBpZl1zsDec+GA+E3rhRlIabgQ\nW4WGs29P9xMmfJh5u74oa5j10jdd/wxr9D1y3u0ORdrLIFxQKZo02GeTgFs6NMFg\nCzQjAK96qZVjP603ArQ7WZfb+v8SNbSCJJ6g9vbX83KjipPJk8Y31fZG0RuWfIZz\nA7dTrRNJEwKBgEyXQkpkGxvOWlNx2hkAmXgefnvUYE8XowcJNY7F8lB9bwqss5CU\ntdnGmnK0yZGzbUD8Od+1905D9kudH95cqAFNRzp9GpbDwOu6AYBCRiVkioM77YzH\nRjRxgYXQHdlUjV2yVls3Tno5r33XXXf4CVdP2CvCR5as8nWXblRfF8w9AoGBAOix\nmHqA3eeg4FLwwANpBQ0s6kKgwjyunhI1l4twyOKBOsI6O7Vj3nkw3PZuCOP4JTx3\nJ2PucuRANCnH5NouNk51e/b51bV1v5CFotXTcKXPDWoe4cpW9vsQ96m0uAE1bCuX\nreUsHxueg76eWLjWSAackqixQReEJJmAm/OxTjZXAoGAeOg1FoWI3GksJ0DA/H5O\n37+DjS2wEd7rYhYp0q9eusD31vZbN+THtigtJ7Fx61N6u15KBWKdHgFFMgQw2SLO\nKAsKp2YFg7DmfVvvhti3F+21dDMRDbAYHk/JizTUiJ0VnfxNEtGEeHJsAQs7nEzV\n1EMHjccdub+l7Zn/AWyLVGU=\n-----END PRIVATE KEY-----\n",
+  "client_email": "quan-dataflow-sa@elastic-sa.iam.gserviceaccount.com",
+  "client_id": "111817339355967795168",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/quan-dataflow-sa%40elastic-sa.iam.gserviceaccount.com"
+}

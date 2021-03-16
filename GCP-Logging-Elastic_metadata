@@ -1,0 +1,22 @@
+{
+  "description": "A pipeline to ingest logs from GCP Pub/Sub to Elasticsearch ",
+  "name": "GCP Logging",
+  "parameters": [
+    {
+      "regexes": [
+        "[^\\n\\r]+$"
+      ],
+      "name": "cloudID",
+      "helpText": "Elasticsearch cluster cloud ID",
+      "label": "Elasticsearch Cloud ID"
+    },
+    {
+      "regexes": [
+        "[^\\n\\r]+$"
+      ],
+      "name": "apiKey",
+      "helpText": "Elasticsearch API key for authentication. Format: API ID:API Key",
+      "label": "Elasticsearch API key"
+    }
+  ]
+}
